@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "preinstall": "npx check-engine",
-    "test": "jest --silent --detectOpenHandles --forceExit"
+    "test": "jest --silent --detectOpenHandles --forceExit",
+    "local": "nodemon",
+    "start": "cross-env NODE_ENV=production API_VERSION=1.0.0 node app.js"
   },
   "repository": {
     "type": "git",
@@ -41,6 +43,7 @@
     "moment": "^2.30.1",
     "moment-timezone": "^0.5.45",
     "morgan": "^1.10.0",
+    "objection": "^3.1.4",
     "pubsub-js": "^1.9.4",
     "underscore": "^1.13.6",
     "uuid": "^9.0.1",
