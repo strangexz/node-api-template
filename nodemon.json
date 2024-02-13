@@ -1,0 +1,6 @@
+{
+  "watch": ["api", ".env", "config"],
+  "ext": "json, js",
+  "ignore": [".git", "views/*", ".tmp/*"],
+  "exec": "cross-env API_VERSION=0.0.1 node src/app.js"
+}
