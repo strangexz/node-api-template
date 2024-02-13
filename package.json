@@ -1,0 +1,23 @@
+{
+  "name": "node-api-template",
+  "version": "0.0.1",
+  "description": "Estructura base para proyectos API en Node JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --silent --detectOpenHandles --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strangexz/node-api-template.git"
+  },
+  "keywords": [
+    "node",
+    "api"
+  ],
+  "author": "ja_figueroa@outlook.es",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/strangexz/node-api-template/issues"
+  },
+  "homepage": "https://github.com/strangexz/node-api-template#readme"
+}
