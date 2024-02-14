@@ -18,7 +18,6 @@ const getLabel = function (modulePath) {
 
 /* Mostrando el nivel del log */
 console.info(`${myTimestamp} - Configurando Logger global [${level}] [Winston]`);
-console.info(`${myTimestamp} - Logger global configurado`);
 
 /* Exportando Logger como función */
 module.exports = function (callingModule) {
@@ -113,6 +112,8 @@ module.exports = function (callingModule) {
   logger.debug('Debug Logger configured');
   logger.verbose('Verbose Logger configured');
   logger.silly('Silly Logger configured');
+  console.info(`${myTimestamp} - Logger global configurado`);
+  console.log();
 
   return logger;
 };
