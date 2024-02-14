@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Estructura base para proyectos API en Node JS",
   "main": "app.js",
+  "type": "commonjs",
   "scripts": {
     "preinstall": "npx check-engine",
     "test": "jest --silent --detectOpenHandles --forceExit",
