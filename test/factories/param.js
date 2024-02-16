@@ -2,8 +2,8 @@ const { faker } = require('@faker-js/faker');
 const { Factory } = require('rosie');
 const _ = require('underscore');
 
-const { dataTypes, randomArray, randomJson } = require('../DataTest');
-const paramsJson = require('../../database/params.json');
+const { dataTypes, randomArray, randomJson } = require('./metadata');
+const paramsJson = require('../../database/data/params.json');
 
 const names = [];
 const params = paramsJson.map((parameter) => {
@@ -13,8 +13,8 @@ const params = paramsJson.map((parameter) => {
     type: parameter.type,
     description: parameter.description,
     group: parameter.group,
-    readOnly: parameter.read_only,
-    hidden: parameter.hidden,
+    readOnly: parameter.is_read_only,
+    hidden: parameter.is_hidden,
   };
 });
 
