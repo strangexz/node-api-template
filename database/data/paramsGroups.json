@@ -1,0 +1,6 @@
+[
+  { "name": "Parámetros de configuración del API", "is_special": true },
+  { "name": "Parámetros de configuración de servidor SMTP", "is_special": true },
+  { "name": "Parámetros de configuración de panel administrativo", "is_special": true },
+  { "name": "Parámetros de configuración de aplicación móbil", "is_special": true }
+]

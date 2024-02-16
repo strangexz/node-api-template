@@ -1,0 +1,173 @@
+[
+  {
+    "key": "web_session_life",
+    "value": "600000",
+    "type": "int",
+    "description": "tiempo de sesíon en las aplicaciones web(milisegundos)",
+    "is_read_only": true,
+    "is_hidden": false,
+    "group": 3
+  },
+  {
+    "key": "web_timeout_alert",
+    "value": "590000",
+    "type": "int",
+    "description": "Tiempo de alerta de cierre de sesión en las aplicaciones web(milisegundos)",
+    "is_read_only": true,
+    "is_hidden": false,
+    "group": 3
+  },
+  {
+    "key": "token_life",
+    "value": "6h",
+    "type": "text",
+    "description": "Tiempo de vida de los json web token de seguridad(leer documentación)",
+    "is_read_only": true,
+    "is_hidden": false,
+    "group": 3
+  },
+  {
+    "key": "login_attempt_limit",
+    "value": "3",
+    "type": "int",
+    "description": "Límite de intentos de inicio de sesión",
+    "is_read_only": false,
+    "is_hidden": true,
+    "group": 3
+  },
+  {
+    "key": "application_version",
+    "value": "SP05",
+    "type": "text",
+    "description": "Versión de la aplicación",
+    "is_read_only": false,
+    "is_hidden": true,
+    "group": 1
+  },
+  {
+    "key": "maintenance_mode",
+    "value": "false",
+    "type": "boolean",
+    "description": "activa o desactiva el modo mantenimiento",
+    "is_read_only": false,
+    "is_hidden": false,
+    "group": 3
+  },
+  {
+    "key": "ad_connection_timeout",
+    "value": "5000",
+    "type": "int",
+    "is_read_only": false,
+    "is_hidden": true,
+    "description": "Tiempo de de gracia en el que la conexión al directorio activo expiró. En milisegundos (ms) ",
+    "group": 1
+  },
+  {
+    "key": "password_request_validity_time",
+    "value": "1",
+    "type": "int",
+    "is_read_only": false,
+    "is_hidden": true,
+    "description": "Tiempo de validez de las solicitudes de contraseña (en dias) ",
+    "group": 3
+  },
+  {
+    "key": "password_request_validity_time",
+    "value": "1",
+    "type": "int",
+    "is_read_only": false,
+    "is_hidden": true,
+    "description": "Tiempo de validez de las solicitudes de contraseña (en dias) ",
+    "group": 3
+  },
+  {
+    "key": "smtp_host",
+    "value": "",
+    "type": "text",
+    "is_read_only": false,
+    "is_hidden": true,
+    "description": "Dominio o dirección IP del servidor de correo ",
+    "group": 2
+  },
+  {
+    "key": "smtp_user",
+    "value": "",
+    "type": "text",
+    "is_read_only": false,
+    "is_hidden": true,
+    "description": "Usuario de la cuenta de correo electrónico ",
+    "group": 2
+  },
+  {
+    "key": "smtp_secure",
+    "value": "false",
+    "type": "boolean",
+    "is_read_only": false,
+    "is_hidden": true,
+    "description": "Implementa protocolos de seguridad? ",
+    "group": 2
+  },
+  {
+    "key": "smtp_pass",
+    "value": "",
+    "type": "text",
+    "is_read_only": false,
+    "is_hidden": true,
+    "description": "Contraseña de la cuenta de correo electrónico ",
+    "group": 2
+  },
+  {
+    "key": "smtp_port",
+    "value": "",
+    "type": "int",
+    "is_read_only": false,
+    "is_hidden": true,
+    "description": "Puerto del servidor de correo electrónico ",
+    "group": 2
+  },
+  {
+    "key": "smtp_tls_auth",
+    "value": "false",
+    "type": "boolean",
+    "is_read_only": false,
+    "is_hidden": true,
+    "description": "Rechazar conexiones no autenticadas? ",
+    "group": 2
+  },
+  {
+    "key": "response_mail",
+    "value": "",
+    "type": "text",
+    "is_read_only": true,
+    "is_hidden": true,
+    "description": "Correo remitente de las notificaciones por correo electrónico ",
+    "group": 2
+  },
+  {
+    "key": "timeout_value",
+    "value": "25000",
+    "type": "int",
+    "is_read_only": true,
+    "is_hidden": true,
+    "description": "Valor en milisegundos del tiempo límite de espera, en el consumo a los servicios de tercerceros ",
+    "group": 1
+  },
+  {
+    "key": "password_request_type",
+    "value": "0,create|1,reset",
+    "type": "text",
+    "is_read_only": true,
+    "is_hidden": true,
+    "description": "Arreglo de valores que representan los tipos de solicitudes de contraseñas",
+    "group": 3
+  },
+  {
+    "key": "password_request_status",
+    "value": "0,pending|1,cancelled|2,expired|3,completed",
+    "type": "text",
+    "is_read_only": true,
+    "is_hidden": true,
+    "description": "Arreglo de valores que representan los estados de solicitudes de contraseñas",
+    "group": 3
+  }
+]
