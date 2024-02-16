@@ -13,14 +13,13 @@ class Param extends BaseModel {
 
   static get attributes() {
     return {
-      id: { columnName: 'id' },
-      key: { maxLength: 128, columnName: 'key' },
-      type: { maxLength: 16, columnName: 'type' },
-      value: { maxLength: 255, columnName: 'value' },
-      description: { maxLength: 32, columnName: 'description' },
-      isReadOnly: { columnName: 'is_read_only' },
-      isHidden: { columnName: 'is_hidden' },
-      group: { columnName: 'group' },
+      key: { maxLength: 128, columnName: 'key', aRelationMap: false },
+      type: { maxLength: 16, columnName: 'type', aRelationMap: false },
+      value: { maxLength: 255, columnName: 'value', aRelationMap: false },
+      description: { maxLength: 32, columnName: 'description', aRelationMap: false },
+      isReadOnly: { columnName: 'is_read_only', aRelationMap: false },
+      isHidden: { columnName: 'is_hidden', aRelationMap: false },
+      group: { columnName: 'group', aRelationMap: false },
     };
   }
 
@@ -32,9 +31,9 @@ class Param extends BaseModel {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['key', 'value', 'isReadOnly', 'isHidden'],
+      required: ['key', 'type', 'value', 'isReadOnly', 'isHidden'],
       properties: {
-        id: { type: 'integer', columnName: 'id' },
+        id: { type: 'integer' },
         key: { type: 'string', maxLength: 128 },
         type: { type: 'string', maxLength: 16 },
         value: { type: 'string', maxLength: 255 },

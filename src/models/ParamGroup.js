@@ -13,10 +13,9 @@ class ParamGroup extends BaseModel {
 
   static get attributes() {
     return {
-      id: { columnName: 'id' },
-      name: { maxLength: 64, columnName: 'name' },
-      isSpecial: { columnName: 'is_special' },
-      params: { columnName: 'params' },
+      name: { maxLength: 64, columnName: 'name', aRelationMap: false },
+      isSpecial: { columnName: 'is_special', aRelationMap: false },
+      params: { columnName: 'params', aRelationMap: true },
     };
   }
 
@@ -30,7 +29,7 @@ class ParamGroup extends BaseModel {
       type: 'object',
       required: ['name', 'isSpecial'],
       properties: {
-        id: { type: 'integer', columnName: 'id' },
+        id: { type: 'integer' },
         name: { type: 'string', maxLength: 64 },
         isSpecial: { type: 'boolean', default: false },
       },
