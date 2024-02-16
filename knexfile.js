@@ -1,5 +1,5 @@
 // Update with your config settings.
-
+const { knexSnakeCaseMappers } = require('objection');
 /* Cargando variables de entorno */
 require('dotenv').config();
 
@@ -13,14 +13,16 @@ module.exports = {
     useNullAsDefault: true,
     migrations: {
       tableName: 'knex_migrations',
-      directory: __dirname + '/knex/migrations',
+      directory: __dirname + '/database/migrations',
     },
     seeds: {
-      directory: __dirname + '/knex/seeds',
+      directory: __dirname + '/database/seeds',
     },
+
+    ...knexSnakeCaseMappers(),
   },
 
-  development: {
+  local: {
     client: 'sqlite3',
     connection: {
       filename: './dev.sqlite3',
@@ -28,11 +30,36 @@ module.exports = {
     useNullAsDefault: true,
     migrations: {
       tableName: 'knex_migrations',
-      directory: __dirname + '/knex/migrations',
+      directory: __dirname + '/database/migrations',
     },
     seeds: {
-      directory: __dirname + '/knex/seeds',
+      directory: __dirname + '/database/seeds',
     },
+
+    ...knexSnakeCaseMappers(),
+  },
+
+  development: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user: 'username',
+      password: 'password',
+    },
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    useNullAsDefault: true,
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: __dirname + '/database/migrations',
+    },
+    seeds: {
+      directory: __dirname + '/database/seeds',
+    },
+
+    ...knexSnakeCaseMappers(),
   },
 
   staging: {
@@ -48,11 +75,13 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations',
-      directory: __dirname + '/knex/migrations',
+      directory: __dirname + '/database/migrations',
     },
     seeds: {
-      directory: __dirname + '/knex/seeds',
+      directory: __dirname + '/database/seeds',
     },
+
+    ...knexSnakeCaseMappers(),
   },
 
   production: {
@@ -68,10 +97,12 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations',
-      directory: __dirname + '/knex/migrations',
+      directory: __dirname + '/database/migrations',
     },
     seeds: {
-      directory: __dirname + '/knex/seeds',
+      directory: __dirname + '/database/seeds',
     },
+
+    ...knexSnakeCaseMappers(),
   },
 };
