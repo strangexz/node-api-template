@@ -1,6 +1,5 @@
 const _ = require('underscore');
 
-
 /**
  * Devuelve fecha ISO formateada
  *
