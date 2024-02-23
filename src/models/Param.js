@@ -31,7 +31,7 @@ class Param extends BaseModel {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['key', 'type', 'value', 'isReadOnly', 'isHidden'],
+      required: ['key', 'type', 'value', 'is_read_only', 'is_hidden'],
       properties: {
         id: { type: 'integer' },
         key: { type: 'string', maxLength: 128 },

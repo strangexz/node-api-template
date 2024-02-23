@@ -4,7 +4,7 @@ const BaseModel = require('../config/model');
 class ParamGroup extends BaseModel {
   /* El nombre de la table es la única propiedad requerida. */
   static get tableName() {
-    return 'paramsGroups';
+    return 'params_groups';
   }
 
   static get idColumn() {
@@ -53,7 +53,7 @@ class ParamGroup extends BaseModel {
          */
         modelClass: Param,
         join: {
-          from: 'paramsGroups.id',
+          from: 'params_groups.id',
           to: 'params.group',
         },
       },

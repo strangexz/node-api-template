@@ -1,10 +1,8 @@
 const { faker } = require('@faker-js/faker');
 const _ = require('underscore');
 
-const configuration = require('../../../knexfile')['test'];
-const knex = require('knex')(configuration);
-
 const ParamGroup = require('../ParamGroup');
+const factories = require('../../../test/factories');
 
 const names = [];
 const paramsGroups = [];
@@ -39,6 +37,10 @@ describe('Param Group Model unit test', () => {
     let { name, isSpecial } = expected;
 
     beforeAll(async () => {
+      const sampleSize = 3;
+      const groups = factories.paramsGroups.buildList(sampleSize);
+      console.log(groups);
+      console.log(process.env.NODE_ENV);
       newParamGroup = await ParamGroup.query().insertGraphAndFetch(expected);
     });
 
