@@ -61,7 +61,7 @@
     "camelcase": [
       "warn",
       {
-        "properties": "always"
+        "properties": "never"
       }
     ],
     "comma-style": [
