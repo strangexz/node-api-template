@@ -12,7 +12,7 @@ for (let index = 0; index < faker.number.int({ min: 3, max: 30 }); index++) {
   randomJson[faker.lorem.word] = getTypeValue(faker.helpers.arrayElement(elementsTypes));
 }
 
-const userTest = {
+const userDataTest = {
   key: 'testing',
   deletedUserKey: 'deletedUser',
   blockedUserKey: 'blockedUser',
@@ -42,6 +42,11 @@ const userTest = {
   ],
 };
 
+/**
+ *
+ * @param {*} dataype
+ * @returns
+ */
 function getTypeValue(dataype) {
   let value;
 
@@ -69,4 +74,4 @@ function getTypeValue(dataype) {
   return value;
 }
 
-module.exports = { dataTypes, userTest, randomArray, randomJson };
+module.exports = { dataTypes, userDataTest, randomArray, randomJson, getTypeValue };

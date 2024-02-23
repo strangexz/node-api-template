@@ -1,25 +1,11 @@
 const { faker } = require('@faker-js/faker');
-const _ = require('underscore');
+const { Factory } = require('rosie');
 
-const names = [];
-const paramsGroups = [];
-
-for (let i = 0; i < 5; i++) {
-  let name;
-  do {
-    name = faker.hacker.adjective();
-  } while (_.contains(names, name));
-
-  names.push(name);
-}
-
-for (const name of names) {
-  const paramGroup = {
-    name,
-    special: faker.datatype.boolean(),
-  };
-
-  paramsGroups.push(paramGroup);
-}
+const paramsGroups = Factory.define('params_groups')
+  .sequence('id')
+  .attr('name', faker.hacker.adjective())
+  .attr('is_special', faker.datatype.boolean())
+  .attr('updated_at', () => new Date())
+  .attr('created_at', () => new Date());
 
 module.exports = paramsGroups;
