@@ -41,6 +41,8 @@ describe('Param Group Model unit test', () => {
       const groups = factories.paramsGroups.buildList(sampleSize);
       console.log(groups);
       console.log(process.env.NODE_ENV);
+      let oGroup = await ParamGroup.query();
+      console.log(oGroup);
       newParamGroup = await ParamGroup.query().insertGraphAndFetch(expected);
     });
 

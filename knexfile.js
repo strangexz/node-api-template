@@ -9,7 +9,9 @@ require('dotenv').config();
 module.exports = {
   test: {
     client: 'sqlite3',
-    connection: ':memory:',
+    connection: {
+      filename: ':memory:',
+    },
     useNullAsDefault: true,
     migrations: {
       tableName: 'knex_migrations',

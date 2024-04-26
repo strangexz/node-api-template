@@ -2,7 +2,7 @@ const objection = require('objection');
 const configuration = require('./knexfile')['test'];
 const knex = require('knex')(configuration);
 
-const { transaction, Model } = objection;
+console.log(configuration);
 
 beforeAll(async () => {
   await knex.migrate

@@ -4,7 +4,7 @@ const BaseModel = require('../config/model');
 class ParamGroup extends BaseModel {
   /* El nombre de la table es la única propiedad requerida. */
   static get tableName() {
-    return 'params_groups';
+    return 'paramsGroups';
   }
 
   static get idColumn() {
@@ -16,6 +16,7 @@ class ParamGroup extends BaseModel {
       name: { maxLength: 64, columnName: 'name', aRelationMap: false },
       isSpecial: { columnName: 'is_special', aRelationMap: false },
       params: { columnName: 'params', aRelationMap: true },
+      table: { name: 'params_groups' },
     };
   }
 
@@ -53,7 +54,7 @@ class ParamGroup extends BaseModel {
          */
         modelClass: Param,
         join: {
-          from: 'params_groups.id',
+          from: 'paramsGroups.id',
           to: 'params.group',
         },
       },
