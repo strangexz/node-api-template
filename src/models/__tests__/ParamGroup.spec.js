@@ -58,8 +58,8 @@ describe('Param Group Model unit test', () => {
 
     it(`should have isSpecial`, () => {
       expect(newParamGroup.isSpecial).toBeDefined();
-      expect(newParamGroup.isSpecial).toBe(isSpecial);
       expect(_.isBoolean(newParamGroup.isSpecial)).toBeTruthy();
+      expect(newParamGroup.isSpecial).toBe(isSpecial);
     });
 
     it(`should have createdAt`, () => {
