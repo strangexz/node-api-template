@@ -46,7 +46,7 @@ class ParamGroup extends BaseModel {
     const Param = require('./Param');
 
     return {
-      group: {
+      params: {
         relation: BaseModel.HasManyRelation,
         /**
          * Modelo relacionado. Esto puede ser un constructor de una subclase del modelo o

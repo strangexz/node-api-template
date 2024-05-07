@@ -20,6 +20,7 @@ class Param extends BaseModel {
       isReadOnly: { columnName: 'is_read_only', aRelationMap: false },
       isHidden: { columnName: 'is_hidden', aRelationMap: false },
       group: { columnName: 'group', aRelationMap: false },
+      table: { name: 'params' },
     };
   }
 
