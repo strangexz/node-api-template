@@ -5,40 +5,49 @@ const validator = require('validator');
 const ParamGroup = require('../ParamGroup');
 const factories = require('../../../test/factories');
 
-const names = [];
 const paramsGroups = [];
+const newParamsGroups = [];
+const params = [];
 
-// for (let i = 0; i < 5; i++) {
-//   let name;
-//   do {
-//     name = faker.lorem.sentence(5);
-//   } while (_.contains(names, name));
-
-//   names.push(name);
-// }
-
-// for (const name of names) {
-//   const paramGroup = {
-//     name,
-//     isSpecial: faker.datatype.boolean(),
-//   };
-
-//   paramsGroups.push(paramGroup);
-// }
 for (let i = 0; i < 5; i++) {
   const newGroup = factories.paramsGroups.build();
   paramsGroups.push(newGroup);
 }
 
-console.log(paramsGroups);
+for (let j = 0; j < 30; j++) {
+  const newParam = factories.params.build();
+  params.push(newParam);
+}
+
+for (const paramGroup of paramsGroups) {
+  const randomParam = [];
+  const newParameters = [];
+  const counter = faker.number.int({ min: 1, max: 5 });
+
+  for (let k = 0; k < counter; k++) {
+    const randomIndex = faker.number.int({ min: 0, max: 29 });
+    console.log(randomIndex);
+    randomParam.push(params[randomIndex]);
+  }
+
+  for (const param of randomParam) {
+    param.group = paramGroup.id;
+    newParameters.push(param);
+  }
+
+  paramGroup.params = newParameters;
+  newParamsGroups.push(paramGroup);
+}
+
+console.log(newParamsGroups);
 
 describe('Param Group Model unit test', () => {
   describe.each([
-    ['first', paramsGroups[0]],
-    ['second', paramsGroups[1]],
-    ['third', paramsGroups[2]],
-    ['fourth', paramsGroups[3]],
-    ['fifth', paramsGroups[4]],
+    ['first', newParamsGroups[0]],
+    ['second', newParamsGroups[1]],
+    ['third', newParamsGroups[2]],
+    ['fourth', newParamsGroups[3]],
+    ['fifth', newParamsGroups[4]],
   ])('%s group', (input, expected) => {
     let newParamGroup;
     let { name, isSpecial, params } = expected;
@@ -60,7 +69,6 @@ describe('Param Group Model unit test', () => {
 
     it(`should have isSpecial`, () => {
       expect(newParamGroup.isSpecial).toBeDefined();
-      console.log(newParamGroup.isSpecial);
       if (_.isBoolean(newParamGroup.isSpecial)) {
         expect(_.isBoolean(newParamGroup.isSpecial)).toBeTruthy();
         expect(newParamGroup.isSpecial).toBe(isSpecial);
@@ -72,7 +80,6 @@ describe('Param Group Model unit test', () => {
 
     it(`should have createdAt`, () => {
       expect(newParamGroup.createdAt).toBeDefined();
-      console.log(newParamGroup.createdAt);
       if (_.isDate(newParamGroup.createdAt)) {
         expect(_.isDate(newParamGroup.createdAt)).toBeTruthy();
       } else {
@@ -82,7 +89,6 @@ describe('Param Group Model unit test', () => {
 
     it(`should have updatedAt`, () => {
       expect(newParamGroup.updatedAt).toBeDefined();
-      console.log(newParamGroup.updatedAt);
       if (_.isDate(newParamGroup.updatedAt)) {
         expect(_.isDate(newParamGroup.updatedAt)).toBeTruthy();
       } else {
@@ -91,6 +97,7 @@ describe('Param Group Model unit test', () => {
     });
 
     it('should have relation mapping', () => {
+      console.log(newParamGroup);
       expect(newParamGroup.relationMappings).toHaveProperty('params');
     });
   });

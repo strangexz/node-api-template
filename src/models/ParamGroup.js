@@ -1,4 +1,3 @@
-// const {Rela} = require('objection');
 const BaseModel = require('../config/model');
 
 class ParamGroup extends BaseModel {

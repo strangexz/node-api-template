@@ -52,9 +52,7 @@ it('should get list columns of the table params', async () => {
   hasCreatedAt = true;
   hasUpdatedAt = true;
 
-  query = `
-    pragma table_info(${camelToSnakeCase(Param.tableName)})
-  `;
+  query = `pragma table_info(${camelToSnakeCase(Param.tableName)})`;
 
   columns = await knex.raw(query);
 

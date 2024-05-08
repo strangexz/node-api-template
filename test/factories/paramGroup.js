@@ -2,8 +2,7 @@ const { faker } = require('@faker-js/faker');
 const { Factory } = require('rosie');
 
 const paramGroupModel = require('../../src/models/ParamGroup');
-const factories = require('../factories/');
-console.log(factories);
+const factoryParam = require('../factories/param');
 
 const params = [];
 const paramsCount = faker.number.int({ min: 1, max: 5 });
@@ -22,7 +21,8 @@ for (let i = 0; i < paramsCount; i++) {
   };
 
   // const newParam = factories.params.build();
-  params.push(newParam);
+  // params.push(newParam);
+  params.push(faker.number.int({ min: 1, max: 5 }));
 }
 
 console.log(params);
@@ -31,7 +31,7 @@ const paramsGroups = Factory.define(paramGroupModel.attributes.table.name)
   .sequence('id')
   .attr(paramGroupModel.attributes.name.columnName, faker.hacker.adjective())
   .attr(paramGroupModel.attributes.isSpecial.columnName, faker.datatype.boolean())
-  .attr(paramGroupModel.attributes.params.columnName, params)
+  .attr(paramGroupModel.attributes.params.columnName, factoryParam.buildList(paramsCount))
   .attr('updated_at', () => new Date().toISOString())
   .attr('created_at', () => new Date().toISOString());
 
