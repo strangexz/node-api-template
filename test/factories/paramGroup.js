@@ -10,7 +10,7 @@ const { dataTypes, getTypeValue } = require('./metadata');
 for (let i = 0; i < paramsCount; i++) {
   const typeData = faker.helpers.arrayElement(dataTypes);
   const newParam = {
-    id: i + 1,
+    id: i + 4,
     key: faker.database.column(),
     value: getTypeValue(typeData),
     type: typeData,
